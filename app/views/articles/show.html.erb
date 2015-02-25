@@ -6,3 +6,8 @@
 <h3>Comments: <%= @article.comments.count %></h3>
 <%= render partial: 'comment', collection: @article.comments %>
 <%= render partial: "comments/form" %>
+<p>
+  <% @article.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+  <% end %>
+</p>
